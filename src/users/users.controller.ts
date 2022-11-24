@@ -61,4 +61,9 @@ export class UsersController {
   logout(@Req() request: Request) {
     request.session.user = null;
   }
+
+  @Post('signin')
+  create(@Body() createUserDto: CreateUserDto) {
+    return this.usersService.create(createUserDto);
+  }
 }

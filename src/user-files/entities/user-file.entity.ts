@@ -10,7 +10,16 @@ export class UserFile {
   filename: string;
 
   @Column()
-  hash: string;
+  size: number;
+
+  @Column()
+  type: string;
+
+  @Column()
+  cid: string;
+
+  @Column({ nullable: true })
+  sharedLink: string;
 
   @ManyToOne(() => User)
   user: User;
